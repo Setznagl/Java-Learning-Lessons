@@ -1,21 +1,29 @@
 package DIO_Exercises;
 
 import java.util.Scanner;
-
-/*
-Programa de exerício para ler dois conjuntos de valores, o primeiro representando o nome de um aluno
-e o segundo representando  a sua idade ( para encerrar aperte 0 no campo nome )
-*/
 public class DIO_A4_repeticao_e_arrays {
-
 // Método escanear com escopo static para poder ser acesso pelos métodos
 
     static Scanner escanear = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        /*  Bloco Principal de funções
-        scanNomeIdade(escanear.next(), escanear.nextInt());
+        System.out.println("Selecione a função: \n" +
+                "1 - scanNomeIdade \n" +
+                "2 - notaValida \n" +
+                "3 - maiorE_Media \n");
+
+        int opcaoSelecionada = escanear.nextInt();
+        boolean opcaoSelecionadaValida = notaValida(opcaoSelecionada);
+            switch (opcaoSelecionada){
+                case 1 {
+                    scanNomeIdade(escanear.next(), escanear.nextInt());
+                }
+                case 2 {
+
+                }
+            }
+            
         notaValida(escanear.nextInt());
          */
         maiorE_Media(escanear.nextInt(), escanear.nextInt(), escanear.nextInt(), escanear.nextInt(), escanear.nextInt());
@@ -41,14 +49,14 @@ public class DIO_A4_repeticao_e_arrays {
         System.out.println("Sistema encerrado, nome digitado como 0 ");
     };
 
-    public static int notaValida(int nota1) {
+    public static boolean notaValida(int nota1) {
         while (nota1 < 0|| nota1 > 10) {
             System.out.println("A nota digitada foi " + nota1);
             if(nota1 < 0 || nota1 > 10){
                 System.out.println("Inválido, nota fora do escopo");
                 System.out.println("Insira uma nota para validação");
                 nota1 = escanear.nextInt();}
-            else { break;};
+            else { return true;};
         }
         System.out.println("A nota digitada é válida e foi : " + nota1);
         return nota1;
