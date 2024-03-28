@@ -14,20 +14,21 @@ public class DIO_A4_repeticao_e_arrays {
                 "3 - maiorE_Media \n");
 
         int opcaoSelecionada = escanear.nextInt();
-        boolean opcaoSelecionadaValida = notaValida(opcaoSelecionada);
+        int opcaoSelecionadaValida = opcaoValida(opcaoSelecionada);
             switch (opcaoSelecionada){
-                case 1 {
+                case 1: {
                     scanNomeIdade(escanear.next(), escanear.nextInt());
+                    break;
                 }
-                case 2 {
-
+                case 2: {
+                    break;
                 }
             }
             
         notaValida(escanear.nextInt());
-         */
+         /*
         maiorE_Media(escanear.nextInt(), escanear.nextInt(), escanear.nextInt(), escanear.nextInt(), escanear.nextInt());
-
+        */
 
 
     }
@@ -49,17 +50,29 @@ public class DIO_A4_repeticao_e_arrays {
         System.out.println("Sistema encerrado, nome digitado como 0 ");
     };
 
-    public static boolean notaValida(int nota1) {
+    public static int notaValida(int nota1) {
         while (nota1 < 0|| nota1 > 10) {
             System.out.println("A nota digitada foi " + nota1);
             if(nota1 < 0 || nota1 > 10){
                 System.out.println("Inválido, nota fora do escopo");
                 System.out.println("Insira uma nota para validação");
                 nota1 = escanear.nextInt();}
-            else { return true;};
+            else { return nota1;};
         }
         System.out.println("A nota digitada é válida e foi : " + nota1);
         return nota1;
+    };
+
+    public static int opcaoValida(int opcao1) {
+        while (opcao1 < 0|| opcao1 > 10) {
+            if(opcao1 < 0 || opcao1 > 10){
+                System.out.println("Inválido, opção é fora do escopo");
+                System.out.println("Insira uma opção para validação");
+                opcao1 = escanear.nextInt();}
+            else { return opcao1;};
+        }
+        System.out.println("A opção digitada é válida e foi : " + opcao1);
+        return opcao1;
     };
 
     public static void maiorE_Media(int nota1, int nota2, int nota3, int nota4, int nota5){
